@@ -15,9 +15,11 @@ ul {
     margin: 0;
     padding: 0;
 }
+/*
 #map-page #flights-panel.ui-panel {
 	width: 35em;
 } 
+*/
 </style>
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
 <script src="http://maps.google.com/maps/api/js?libraries=weather,places"></script>
@@ -33,8 +35,14 @@ ul {
 <div data-role="page" id="map-page" data-url="map-page">
    
 	
-    <header style="background-color: yellow;">
-    <div style="float:left">
+    <header data-role="header" data-theme="b">
+    <div style="float:left;font-size:small;text-align:center">
+		<input type="text" id="origin-airport" placeholder="Origin" value="DFW"/>
+    	<input type="date" id="departure-date" value="01/01/2015"/>
+    	<input type="text" id="max-value" value="Max Price"/>
+    </div>
+
+    <div style="float:right">
 	<ul>
 	<li><a href="/i18n/destinations/adventure.jsp" title="Adventure"><img src="./images/icons/adventure_icon_s.png" alt="Adventure"/></a></li>
 	<li><a href="/i18n/destinations/beach.jsp" title="Beach" id="beach"><img src="./images/icons/beach_icon_s.png" alt="Beach"/></a></li>
@@ -45,9 +53,7 @@ ul {
 	<li><a href="/i18n/destinations/spa.jsp" title="Spa"><img src="./images/icons/spa_icon_s.png" alt="Spa"/></a></li>
 	</ul>
 	</div>
-	<div id="depature-date-div" style="float:right;font-size:small;text-align:center">
-		<input type="date" id="departure-date" value="01/01/2015"/>
-	</div>
+
 	</header>
 
     <div data-role="content" id="map-canvas">

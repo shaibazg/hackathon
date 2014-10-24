@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: getaway.ApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.323 sec - in getaway.ApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.33 sec - in getaway.ApplicationTests

@@ -103,7 +103,7 @@ $(document).on("click", "#romance", function() {
 	}
 	
 	function styledCityPairContent(availability) {
-		var content = '<div id="cityPairContent">' +
+		var content = '<div id="cityPairContent" style="width:250px; height:120px;">' +
 			'<span style="color:#22A7F0;font-size:large"><b>' + availability.cityPair.destination.address.city + ", " + 
 			availability.cityPair.destination.address.state + " (" + 
 			availability.cityPair.destination.code + ") " +
@@ -183,17 +183,19 @@ $(document).on("click", "#romance", function() {
         var origin = new google.maps.Marker({
             position: latlng,
             map: map,
-            icon: './images/adventure_icon.png',
-            //draggable: true,
+            //icon: './images/adventure_icon.png',
+            draggable: true,
             title: "Dallas/Ft Worth International"
         });
         
+        /*
         var dest = new google.maps.Marker({
         	position: new google.maps.LatLng(42.896828,-90.037997),
         	map: map,
         	draggable: true,
         	title: "Drag to your destination"
         });
+        */
         
         //map.setCenter(latlng);
         
