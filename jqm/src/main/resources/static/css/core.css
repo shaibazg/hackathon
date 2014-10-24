@@ -1041,8 +1041,7 @@ input[type="radio"], input[type="checkbox"] {
     padding-right: 3px;
 }
 select, select[size="0"], select[size="1"] {
-    background-image: url(data:image/png;
-    base64, iVBORw0KGgoAAAANSUhEUgAAABwAAAAaCAAAAACBP2NVAAAAAXNCSVQI5gpbmQAAAAlwSFlzAAALEgAACxIB0t1+/AAAAB50RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNS4xqx9I6wAAABZ0RVh0Q3JlYXRpb24gVGltZQAxMi8yNy8xMlXqzWMAAABcSURBVCjPYzrzDzdgYviPGzAx4AEEdJIvORB2EuWgX8+g4DUWB7G+vwYGN1iwGasuwAgC2vzYJBl1OIGkigj2QGDVZ2OQlcEVCOx6Ekq4vcKtzjDIYwWvseRKAgDrqdgPaoWCjwAAAABJRU5ErkJggg==);
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAaCAAAAACBP2NVAAAAAXNCSVQI5gpbmQAAAAlwSFlzAAALEgAACxIB0t1+/AAAAB50RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNS4xqx9I6wAAABZ0RVh0Q3JlYXRpb24gVGltZQAxMi8yNy8xMlXqzWMAAABcSURBVCjPYzrzDzdgYviPGzAx4AEEdJIvORB2EuWgX8+g4DUWB7G+vwYGN1iwGasuwAgC2vzYJBl1OIGkigj2QGDVZ2OQlcEVCOx6Ekq4vcKtzjDIYwWvseRKAgDrqdgPaoWCjwAAAABJRU5ErkJggg==);
     background-repeat: no-repeat;
     background-position: right center;
     padding-right: 20px;
@@ -3661,4 +3660,8 @@ header {
 }
 #topbar {
     padding-top: 5px;
+}
+
+#map-canvas img {
+    max-width: none;
 }
