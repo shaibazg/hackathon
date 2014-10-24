@@ -49,6 +49,7 @@ function getFlightPrice(destination) {
 }
 
 function buildPriceList(destination) {
+	console.log('inside build price list');
 	var flights = getFlightPrice(destination);
 	
   
