@@ -29,57 +29,59 @@ $( document ).on( "pageinit", "#map-page", function() {
 function initDepartureDate() {
     var now = new Date();
     var today = now.getFullYear() + '-' + (now.getMonth() + 1) + '-' + (now.getDate() + 1);
-    $('#departure-date').val(today);
+    // $('#departOnInput').val(today);
 
 }
 
 
 $(document).on("click", "#beach", function() {
 	iterator = 0;
-	$.getJSON('./json/avail/beach.json', function(citypairs) {
-		renderCityPairs(citypairs,'beach')
+	$.getJSON('./json/avail/beach.json', function(travelTheme) {
+		console.log("Beach Travel theme: " + JSON.stringify(travelTheme));
+		renderCityPairs(travelTheme,'beach')
 	});
 	return false;
 });
 
 $(document).on("click", "#romance", function() {
-	iterator = 0;
-	$.getJSON('./json/avail/romance.json', function(availibilities) {
-		renderCityPairs(availibilities,'romance')
+	iterator = 0;	$.getJSON('./json/avail/romance.json', function(travelTheme) {
+		console.log("Romance Travel theme: " + JSON.stringify(travelTheme));
+		renderCityPairs(travelTheme,'romance')
 	});
-
 	return false;
 });
 
 
-	function renderCityPairs(availibilities, type) {
-		  for (var i = 0; i < availibilities.length; i++) {
+	function renderCityPairs(travelTheme, type) {
+		  for (var i = 0; i < travelTheme.length; i++) {
 			    setTimeout(function() {
-			      addCity(availibilities,type);
+			      addCity(travelTheme,type);
 			    }, i * 200);
 		  }
 	}
-
-	function addCity(availibilities, type) {
+    function addCity(travelTheme, type) {
 		  if (type == 'beach') {
 			  iconPath = './images/icons/beach_icon_s.png';
 		  }	else {
 			  iconPath = './images/icons/romance_icon_s.png';
 		  }
 		  marker = new google.maps.Marker({
-			    position: new google.maps.LatLng(availibilities[iterator].cityPair.destination.latitude,
-			    		availibilities[iterator].cityPair.destination.longitude),
+			    position: new google.maps.LatLng(travelTheme[iterator].cityPair.destination.latitude,
+			    		travelTheme[iterator].cityPair.destination.longitude),
 			    map: map,
 			    draggable: false,
 			    icon: iconPath,
 			    animation: google.maps.Animation.DROP,
 			    title: type,
-			    customInfo: availibilities[iterator]
+			    customInfo: travelTheme[iterator]
 			  })
+	      infoWindow = new google.maps.InfoWindow();
+	      infoWindow.setContent(styledCityPairContent(travelTheme[iterator]));
+	      infoWindow.open(map, marker);
 
 
 		  iterator++;
-		  google.maps.event.addListener(marker, 'mouseover', showAvailability);
+		  //google.maps.event.addListener(marker, 'mouseover', showLowestFare);
 		  google.maps.event.addListener(marker, 'click', markerSelected);
 	}
 
@@ -89,7 +91,7 @@ $(document).on("click", "#romance", function() {
 	}
 
 
-	function showAvailability() {
+	function showLowestFare() {
 	      infoWindow = new google.maps.InfoWindow();
 	      infoWindow.setContent(styledCityPairContent(this.customInfo));
 	      infoWindow.open(map, this);
@@ -102,16 +104,13 @@ $(document).on("click", "#romance", function() {
 		//$(document).on('click', '#find-flights', findFlights);
 	}
 
-	function styledCityPairContent(availability) {
-		var content = '<div id="cityPairContent" style="width:250px; height:120px;">' +
-			'<span style="color:#22A7F0;font-size:large"><b>' + availability.cityPair.destination.address.city + ", " +
-			availability.cityPair.destination.address.state + " (" +
-			availability.cityPair.destination.code + ") " +
+	function styledCityPairContent(travelTheme) {
+		var content = '<div id="cityPairContent" style="width:220px; height:25px;">' +
+			'<span style="color:#22A7F0;font-size:large"><b>' + travelTheme.cityPair.destination.address.city + ", " +
+			travelTheme.cityPair.destination.address.state + " (" +
+			travelTheme.cityPair.destination.code + ") " +
+			' $' + travelTheme.lowestFare +
 			'</b></span><br/>' +
-			'<span><b>Flights:</b> ' + availability.numberOfFlights + '</span><br/>' +
-			'<span><b>Seats:</b> ' + availability.totalSeats + '</span><br/>' +
-			'<span><b>Available:</b> ' + availability.available + '</span><br/>' +
-			'<span style="text-align:center"><a href="#flights-panel" id="find-flights">Find Flights</a></span>&nbsp;' +
 			'</div>';
 		return content;
 	}
