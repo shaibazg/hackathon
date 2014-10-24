@@ -1,30 +1,31 @@
-<html>
+<!DOCTYPE HTML>
 <head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<style>
-#map-page, #map-canvas { 
-	width: 100%; 
-	height: 100%; 
-	padding: 0;
-}
-li {
-    display: inline;
-}
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-/*
-#map-page #flights-panel.ui-panel {
-	width: 35em;
-} 
-*/
-</style>
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
+<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" /> -->
+<link rel="stylesheet" href="css/core.css" />
+<link rel="stylesheet" href="css/map.css" />
+<link rel="stylesheet" href="http://www.aa.com/awardFinder/resources/css/aa-jquery-ui-1.8.21.css" />
+
 <script src="http://maps.google.com/maps/api/js?libraries=weather,places"></script>
-<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.3/jquery.mobile.min.js"></script>
+
+<script type="text/javascript">
+$( document ).ready(function() {
+    $(".aaDatePicker").datepicker({
+      onSelect: function(dateText) {
+        jQuery(this).removeClass('invalid');
+      }
+    });
+});
+</script>
+
 <!-- <script src="/js/map.js"></script> -->
 <script src="./js/map.js"></script>
 <script src="./js/detailsControl.js"></script>
@@ -33,39 +34,90 @@ ul {
 </head>
 <body>
 <div data-role="page" id="map-page" data-url="map-page">
-   
-	
-    <header data-role="header" data-theme="b">
-    <div style="float:left;font-size:small;text-align:center">
-		<input type="text" id="origin-airport" placeholder="Origin" value="DFW"/>
-    	<input type="date" id="departure-date" value="01/01/2015"/>
-    	<input type="text" id="max-value" value="Max Price"/>
+
+    <div id="topbar" class="full-width-container">
+        <div class="container shadow12-up">
+            <header class="row">
+                <div class="span4 site-banner afBanner1">
+                    <a href="/homePage.do" class="site-logo"><img src="http://www.aa.com/content/images/chrome/rebrand/aa-logo.png"></a>
+                </div>
+
+                <div class="span8">
+
+                    <ul id="utility-nav" class="right">
+                        <li class="menu-item-utility">
+                            <a id="join-link" href="/AAdvantage/quickEnroll.do" target="_blank">Join AAdvantage</a>
+                        </li>
+
+                        <li class="menu-item-utility" id="aa-meta-login">
+                            <a href="/login/loginAccess.do;jsessionid=B55A14F0686CFC53CC4D2B94815FF23B?uri=%2flogin%2floginAccess.do&amp;previousPage=%2fawardMap%2fhome.do" id="loginLogoutLink">Login</a>
+                        </li>
+
+                        <li class="menu-item-utility customer-info" data-behavior="dropdown">
+                        </li>
+
+                        <!-- <li class="menu-item-utility" style="padding-right:0;">
+                            <a onclick="window.open(this.href,'demo','scrollbars=yes,menu=no,width=670,height=430,top=125,left=325'); return false;" target="_blank" href="/i18n/urls/awardMapDemo.jsp" style="padding-left:35px;">&nbsp;<i class="icon-newpage"></i>View demo</a>
+                        </li> -->
+
+                        <li class="menu-item-utility" style="padding-right:0">
+                            <a href="/homePage.do" style="top:7px; font-weight:bold">Back to AA.com »</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <div class="row"></div>
+        </div>
     </div>
 
-    <div style="float:right">
-	<ul>
-	<li><a href="/i18n/destinations/adventure.jsp" title="Adventure"><img src="./images/icons/adventure_icon_s.png" alt="Adventure"/></a></li>
-	<li><a href="/i18n/destinations/beach.jsp" title="Beach" id="beach"><img src="./images/icons/beach_icon_s.png" alt="Beach"/></a></li>
-	<li><a href="/i18n/destinations/family.jsp" title="Family"><img src="./images/icons/family_icon_s.png" alt="Family"/></a></li>
-	<li><a href="/i18n/destinations/golf.jsp" title="Golf"><img src="./images/icons/golf_icon_s.png" alt="Golf"/></a></li>
-	<li><a href="/i18n/destinations/romance.jsp" title="Romance" id="romance"><img src="./images/icons/romance_icon_s.png" alt="Romance"/></a></li>
-	<li><a href="/i18n/destinations/ski.jsp" title="Ski"><img src="./images/icons/ski_icon_s.png" alt="Ski"/></a></li>
-	<li><a href="/i18n/destinations/spa.jsp" title="Spa"><img src="./images/icons/spa_icon_s.png" alt="Spa"/></a></li>
-	</ul>
-	</div>
+    <header data-role="header" class="options">
 
+        <div class="afcontainer1">
+
+            <div class="span2 origin-field">
+                <input id="originInput" placeholder="Origin" name="origin" type="text" value="" maxlength="20" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+            </div>
+
+            <div class="span2" style="width:110px">
+                <label for="departOnInput">
+                    <input id="departOnInput" placeholder="Departure date" name="departure-date" class="aaDatePicker" type="text" value="">
+                    <!-- <button type="button" class="ui-datepicker-trigger"><img src="http://www.aa.com/content/images/chrome/icons/aa-calendar-icon.png" alt="" title=""></button> -->
+                </label>
+            </div>
+
+
+            <div class="span2 miles-field">
+                <input id="max-value" name="price" placeholder="Max price" class="numbers" type="text" value="">
+            </div>
+
+            <div style="float:right">
+            	<ul>
+                	<li><a href="/i18n/destinations/adventure.jsp" title="Adventure"><img src="./images/icons/adventure_icon_s.png" alt="Adventure"/></a></li>
+                	<li><a href="/i18n/destinations/beach.jsp" title="Beach" id="beach"><img src="./images/icons/beach_icon_s.png" alt="Beach"/></a></li>
+                	<li><a href="/i18n/destinations/family.jsp" title="Family"><img src="./images/icons/family_icon_s.png" alt="Family"/></a></li>
+                	<li><a href="/i18n/destinations/golf.jsp" title="Golf"><img src="./images/icons/golf_icon_s.png" alt="Golf"/></a></li>
+                	<li><a href="/i18n/destinations/romance.jsp" title="Romance" id="romance"><img src="./images/icons/romance_icon_s.png" alt="Romance"/></a></li>
+                	<li><a href="/i18n/destinations/ski.jsp" title="Ski"><img src="./images/icons/ski_icon_s.png" alt="Ski"/></a></li>
+                	<li><a href="/i18n/destinations/spa.jsp" title="Spa"><img src="./images/icons/spa_icon_s.png" alt="Spa"/></a></li>
+            	</ul>
+        	</div>
+        </div>
 	</header>
+
+<div style="z-index:1;width:1200px;margin:0 auto;background-color:white;height:16px" class="drop-shadow">
+                <div class="drop-shadow-contents"> </div>
+            </div>
 
     <div data-role="content" id="map-canvas">
         <!-- map loads here... -->
     </div>
-	
+
 	<div data-role="panel" id="flights-panel" data-position="right" data-display="overlay">
 	     <ul data-role="listview" id="flights-list" data-divider-theme="a" data-inset="true">
             <li data-role="list-divider" data-theme="b" role="heading">DFW-SAT 24th Oct</li>
         </ul>
 	</div>
-    
+
 </div>
 </body>
 
