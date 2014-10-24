@@ -14,6 +14,8 @@ public interface DestinationsService {
 	
 	public List<Flight> retrieveFlights(Airport originAirport, Date departureDate, DestinationType destType);
 	
-	public List<Availability> retrieveAvailability(Airport originAirport, Date departureDate, DestinationType destType); 
+	public List<Availability> retrieveAvailability(Airport originAirport, Date departureDate, DestinationType destType);
+	
+	//public List<Destination> retrieveDestinations(Airport originAirport, Date departureDate, DestinationType destType);
 	
 }

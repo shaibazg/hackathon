@@ -1,2 +1,3 @@
-.metadata/
-jqm/target
+.metadata
+jqm/target/
+.DS_Store
