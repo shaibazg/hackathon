@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+<script src="/js/getaways.js"></script>
+<script src="/js/jq.bgswitcher.js"></script>
+</head>
+<body>
+<div data-role="page" id="index">
+<header data-role="header" data-theme="b">
+		<h1>Getaways</h1>
+</header>
+
+
+
+<article data-role="content">
+<div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-iconpos="right" data-theme="b">
+	<h2>Let's go flying!</h2>
+	<form id="searchForm" data-ajax="false">
+	<!--<label for="airport">Home Airport</label>-->
+	<input type="text" name="airport" placeholder="Origin" value="Origin"/>
+	<select name="type">
+		<option value="adventure">Adventure</option>
+		<option value="beach">Beach</option>
+		<option value="family">Family</option>
+		<option value="golf">Golf</option>
+		<option value="romance">Romance</option>
+		<option value="ski">Ski</option>
+		<option value="spa">Spa</option>
+	</select>
+	<!--<label for="departureDate">Departure Date</label>-->
+	<input type="date" name="departureDate" data-role="date" placeholder="01/01/2015" value="01/01/2015"/>
+	<!--<label for="type">Type</label>-->
+
+	<input type="button" data-icon="search" value="Find Flights" id="search" data-theme="b"/>
+	</form>	
+</div>
+</article>
+
+<!--  
+<footer data-role="footer" data-theme="b" data-position="fixed">
+	<h3>
+	<nav data-role="navbar">
+		<ul>
+			<li><a href="#" data-icon="phone">Contact</a></li>
+			<li><a href="#" data-icon="cloud">WWW</a></li>
+			<li><a href="#" data-icon="info">Info</a></li>
+		
+		</ul>
+	</nav>
+	</h3>
+</footer>
+-->
+</div>
+<div data-role="page" id="list">
+
+
+<article data-role="content">
+	     <ul data-role="listview" id="flights-list" data-divider-theme="a" data-inset="true">
+            <li data-role="list-divider" data-theme="b" role="heading">Destinations</li>
+        </ul>
+ 
+</article>
+
+</div>
+<div data-role="page" id="details">
+
+ <div data-role="header" data-theme="b"><a href="#" data-rel="back" data-role="button">Go back</a>
+         <h1>Flight Details</h1>
+ </div>
+
+
+<article data-role="content">
+
+</article>
+
+</div>
+
+
+</body>
+
+
+</html>

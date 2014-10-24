@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+<script src="./js/getaways.js"></script>
+<script src="./js/jq.bgswitcher.js"></script>
+<style>
+#map-page, #map-canvas { 
+	width: 100%; 
+	height: 100%; 
+	padding: 0;
+}
+li {
+    display: inline;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#map-page #flights-panel.ui-panel {
+	width: 35em;
+} 
+
+
+</style>
+</head>
+<body>
+<div data-role="page" id="index" data-theme="b">
+	<div data-role="header">
+		<h1>Fareman</h1>		
+	</div>
+	<div data-role="content"">
+	<form id="searchForm" data-ajax="false">
+	<ul>
+		<li><input type="text" name="airport" placeholder="Origin" value="DFW"/></li>
+		<li><input type="text" name="airport" placeholder="Destination" value="LAX"/></li>
+		<li><input type="date" name="departureDate" data-role="date"  value="2014-10-29" id="departure-date"/></li>
+		<li><input type="date" name="returnDate" data-role="date" value="2014-11-01" id="return-date"/></li>
+		<li><input type="button" data-icon="search" value="Find Flights" id="search"/></li>
+	</ul>	
+	</form>	
+	</div>
+</div>						
+<div data-role="page" id="list">
+
+
+<article data-role="content">
+	     <ul data-role="listview" id="flights-list" data-divider-theme="a" data-inset="true">
+            <li data-role="list-divider" data-theme="b" role="heading">Destinations</li>
+        </ul>
+ 
+</article>
+
+</div>
+<div data-role="page" id="details">
+
+ <div data-role="header" data-theme="b"><a href="#" data-rel="back" data-role="button">Go back</a>
+         <h1>Flight Details</h1>
+ </div>
+
+
+<article data-role="content">
+
+</article>
+
+</div>
+
+
+</body>
+
+
+</html>
