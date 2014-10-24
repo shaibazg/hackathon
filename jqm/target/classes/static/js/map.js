@@ -107,12 +107,12 @@ $(document).on("click", "#romance", function() {
 	}
 	
 	function styledCityPairContent(travelTheme) {
-		var content = '<div id="cityPairContent" style="width:220px; height:25px;">' +
+		var content = '<div id="cityPairContent">' +
 			'<span style="color:#22A7F0;font-size:large"><b>' + travelTheme.cityPair.destination.address.city + ", " + 
 			travelTheme.cityPair.destination.address.state + " (" + 
-			travelTheme.cityPair.destination.code + ") " +
-			' $' + travelTheme.lowestFare + 
-			'</b></span><br/>' +
+			travelTheme.cityPair.destination.code + ") </span>" +
+			' <span style="color:green;font-size:large">$' + travelTheme.lowestFare + 
+			'</span></b><br/>' +
 			'</div>';
 		return content;
 	}
