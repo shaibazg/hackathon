@@ -92,3 +92,47 @@ font-family: 'cool_font';
     color: #ffffff;
     padding: 20px 20px 0 0;
 }
+
+.ui-panel {
+    width: 300px;
+}
+
+li .price {
+  display: inline-block;
+}
+
+li .singleleg {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.singleleg>div {
+    display: inline-block;
+
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.singleleg .odSeparator {
+
+    text-align: center;
+width: 34px;
+color: #bbb;
+font-family: "Arial","sans serif";
+font-size: 14px;
+line-height: 21px;
+}
+
+.singleleg .timeAirportBlock {
+  width: 60px;
+}
+
+.flightnumber{
+  width:20px;
+}
+
+#sidebar-title {
+  color: #6e8999;
+font-family: 'cool_font';
+}
