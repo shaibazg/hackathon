@@ -3,7 +3,7 @@ var beachPriceList = [
 
             "price": 390,
             "outbound": {"fltNbr": 1364, "date": "2014-11-11", "time": "05:15 am", "arrivalTime": "06:25 am", "duration": "1 hr 10 min"},
-            "inbound": {"fltNbr": 1364, "date": "2014-11-15", "time": "09:20 am", "arrivalTime": "10:30 am", "duration": "1 hr 20 min"}
+            "inbound": {"fltNbr": 124, "date": "2014-11-15", "time": "09:20 am", "arrivalTime": "10:30 am", "duration": "1 hr 20 min"}
 
     },
     {
