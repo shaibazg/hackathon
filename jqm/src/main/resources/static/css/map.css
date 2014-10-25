@@ -83,3 +83,12 @@ ul {
 .ui-datepicker-trigger { display: none; }
 
 .fareTooltip:hover {cursor: pointer;}
+
+.slides-container .text-container {
+    float: right;
+font-family: 'cool_font';
+    font-size: 26px;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 20px 20px 0 0;
+}

@@ -34,54 +34,71 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
     display: block;
 }
-@font-face {
+/*@font-face {
     font-family: "AmericanSans";
-    src: url(/fonts/american-regular-webfont.eot);
+    src: url(./fonts/american-regular-webfont.ttf);
     font-weight: normal;
     font-style: normal;
-}
-@font-face {
+}*/
+/*@font-face {
     font-family: "AmericanSans";
-    src: url(/fonts/american-regularitalic-webfont.eot);
+    src: url(./fonts/american-regularitalic-webfont.eot);
     font-weight: normal;
     font-style: italic;
 }
 @font-face {
     font-family: "AmericanSans";
-    src: url(/fonts/american-bold-webfont.eot);
+    src: url(./fonts/american-bold-webfont.eot);
     font-weight: bold;
     font-style: normal;
 }
 @font-face {
     font-family: "AmericanSans";
-    src: url(/fonts/american-bold_italic-webfont.eot);
+    src: url(./fonts/american-bold_italic-webfont.eot);
     font-weight: bold;
     font-style: italic;
 }
 @font-face {
     font-family: "AmericanSansLight";
-    src: url(/fonts/american-light-webfont.eot);
+    src: url(./fonts/american-light-webfont.eot);
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: "AmericanSansLight";
-    src: url(/fonts/american-light_italic-webfont.eot);
+    src: url(./fonts/american-light_italic-webfont.eot);
     font-weight: normal;
     font-style: italic;
 }
 @font-face {
     font-family: "AmericanSansMedium";
-    src: url(/fonts/american-medium-webfont.eot);
+    src: url(./fonts/american-medium-webfont.eot);
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: "AmericanSansMedium";
-    src: url(/fonts/american-medium_italic-webfont.eot);
+    src: url(./fonts/american-medium_italic-webfont.eot);
     font-weight: normal;
     font-style: italic;
+}*/
+
+/*@font-face{
+    font-family:"AmericanSans";
+    src:url(fonts/american-regular-webfont.eot);
+    src:url(fonts/american-regular-webfont.eot?#iefix) format('eot'),
+        url(fonts/americansans-regular-webfont.woff) format('woff'),
+        url(fonts/american-regular-webfont.ttf) format('truetype'),
+        url(fonts/american-regular-webfont.svg#FontAwesomeRegular) format('svg');
+    font-weight:normal;
+    font-style:normal
+}*/
+
+@font-face {
+    font-family: cool_font;
+    src: url('/fonts/american-regular-webfont.ttf');
 }
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
