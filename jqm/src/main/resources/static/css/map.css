@@ -152,6 +152,10 @@ padding-top: 10px;
 text-align: center;
 }
 
+.ui-body-a, .ui-page-theme-a .ui-body-inherit, html .ui-bar-a .ui-body-inherit, html .ui-body-a .ui-body-inherit, html body .ui-group-theme-a .ui-body-inherit, html .ui-panel-page-container-a {
+  /*border-color: #4db4fa;*/
+}
+
 .flights-list li {
   padding-left: 20px;
 }
