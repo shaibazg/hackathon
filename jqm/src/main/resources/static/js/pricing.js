@@ -63,7 +63,24 @@ function buildPriceList(destination) {
         //note the use of += in the variable
         //meaning I'm adding to the existing data. not replacing it.
         //store index value in array as id of the <a> tag
-        li += '<li><a href="#" id="' + flightRecord + '">' + flightRecord + '</a></li>';
+        // li += '<li><a href="#" id="' + flightRecord + '">' + flightRecord + '</a></li>';
+
+        var html = '<div class="singleleg">'
+          + '<div class="timeAirportBlock timeAirportBlockDeparture">'
+          +   '07:00'
+          + '</div>'
+          + '<div class="odSeparator">→</div>'
+          + '<div class="timeAirportBlock timeAirportBlockArrival">'
+          +   '12:30'
+          + '</div>'
+          + '<div class="duration">'
+          +   '23h 30m'
+          + '</div>'
+          + '<div id="legdata1411_0" style="display: none">AM DFW 07:00 MAD 12:30</div>'
+          + '</div>';
+
+        li += html;
+
     });
     //append list to ul
     $("#flights-list").append(li);
