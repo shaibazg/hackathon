@@ -40,17 +40,18 @@ $('#slides').superslides({
         var topbarHeightWithPadding = topbarHeight + 40;
         var top = topbarHeightWithPadding;
         var overlayHeight = $("#titleOverlay").height() + overlayPad;
-        if (height && height < (topbarHeightWithPadding + overlayHeight)) {
-            top = height - overlayHeight;
-            if (top < topPad) {
-                top = topPad;
-            }
-        } else {
+        // if (height && height < (topbarHeightWithPadding + overlayHeight)) {
+        //     top = height - overlayHeight;
+        //     if (top < topPad) {
+        //         top = topPad;
+        //     }
+        //     topPad
+        // } else {
             $("#lean_overlay").css("top", topbarHeight + "px");
-        }
+        // }
         $("#overlayTrigger").leanModal({
             top: top,
-            overlay: 0.5,
+            overlay: 0,
             closeButton: "#closeTitleOverlay, #topbar"
         });
         $("#overlayTrigger").click();
@@ -185,13 +186,13 @@ $('#slides').superslides({
 
             <div style="float:right">
             	<ul>
-                	<li><a href="/i18n/destinations/adventure.jsp" title="Adventure"><img src="./images/icons/adventure_icon_s.png" alt="Adventure"/></a></li>
+                	<!-- <li><a href="/i18n/destinations/adventure.jsp" title="Adventure"><img src="./images/icons/adventure_icon_s.png" alt="Adventure"/></a></li> -->
                 	<li><a href="/i18n/destinations/beach.jsp" title="Beach" id="beach"><img src="./images/icons/beach_icon_s.png" alt="Beach"/></a></li>
                 	<li><a href="/i18n/destinations/family.jsp" title="Family"><img src="./images/icons/family_icon_s.png" alt="Family"/></a></li>
                 	<li><a href="/i18n/destinations/golf.jsp" title="Golf"><img src="./images/icons/golf_icon_s.png" alt="Golf"/></a></li>
                 	<li><a href="/i18n/destinations/romance.jsp" title="Romance" id="romance"><img src="./images/icons/romance_icon_s.png" alt="Romance"/></a></li>
                 	<li><a href="/i18n/destinations/ski.jsp" title="Ski"><img src="./images/icons/ski_icon_s.png" alt="Ski"/></a></li>
-                	<li><a href="/i18n/destinations/spa.jsp" title="Spa" id="spa"><img src="./images/icons/spa_icon_s.png" alt="Spa"/></a></li>
+                	<!-- <li><a href="/i18n/destinations/spa.jsp" title="Spa" id="spa"><img src="./images/icons/spa_icon_s.png" alt="Spa"/></a></li> -->
             	</ul>
         	</div>
         </div>
@@ -257,10 +258,6 @@ $('#slides').superslides({
               </div>
             </li>
           </ul>
-          <nav class="slides-navigation">
-            <a href="#" class="next">Next</a>
-            <a href="#" class="prev">Previous</a>
-          </nav>
         </div>
     </div>
 
