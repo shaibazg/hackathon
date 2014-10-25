@@ -106,7 +106,7 @@ $(document).on("click", "#romance", function() {
 	}
 
 	function styledCityPairContent(travelTheme) {
-		var content = '<div id="cityPairContent">' +
+		var content = '<div>' +
 			'<span style="color:#22A7F0;">' + travelTheme.cityPair.destination.address.city + ", " + 
 			travelTheme.cityPair.destination.address.state + " (" + 
 			travelTheme.cityPair.destination.code + ") </span>" +
@@ -237,3 +237,10 @@ $(document).on("click", "#romance", function() {
           flightPath.set('icons', icons);
       }, 50);
     }
+    
+    
+    $(document).on("click", "#spa", function() {
+    	console.log('Inside spa click....');
+    	$("#flights-panel").panel("open");
+    	return false;
+    });
