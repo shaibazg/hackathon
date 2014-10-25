@@ -87,11 +87,11 @@ ul {
 .slides-container .text-container {
     float: right;
 font-family: 'cool_font';
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     color: #ffffff;
     padding: 20px 20px 0 0;
-    font-style: italic;
+    /*font-style: italic;*/
 }
 
 .ui-panel {
