@@ -127,12 +127,20 @@ line-height: 21px;
 
 .singleleg .timeAirportBlock {
   width: 60px;
+padding-left: 10px;
+}
+
+.singleleg .timeAirportArrival {
+  width: 60px;
 }
 
 .flightnumber{
-  width:20px;
+  width:40px;
   background-image: url('http://www.kayak.co.uk/res/images/air/2x/AA.png?v=6caa87ddbd05684560d95a16d6ae9ee3362ad0ce');
   background-size: contain;
+  background-position: left top;
+  padding-left: 20px;
+  background-repeat: no-repeat;
 }
 
 #sidebar-title {

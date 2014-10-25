@@ -26,7 +26,7 @@ var romanticPriceList = [
     {
         "price": 393,
         "outbound": {"fltNbr": 1108, "date": "2014-11-11", "time": "7:15 am", "arrivalTime": "9:15 am", "duration": "2 hrs"},
-        "inbound": {"fltNbr": 1364, "date": "2014-11-15", "time": "6:20 am", "arrivalTime": 8:30 am", "duration": "2 hr 10 min"}
+        "inbound": {"fltNbr": 1364, "date": "2014-11-15", "time": "6:20 am", "arrivalTime": "8:30 am", "duration": "2 hr 10 min"}
 
     },
     {
@@ -70,19 +70,25 @@ function buildPriceList(destination) {
           // + '<div class="timeAirportBlock timeAirportBlockDeparture">'
           // +   '07:00'
           // + '</div>'
-          + '<div class="flightnumber">&nbsp;</div>'
-          + '<div class="odSeparator">→</div>'
+          + '<div class="flightnumber">'+flight.outbound.fltNbr+'</div>'
           + '<div class="timeAirportBlock timeAirportBlockDeparture">'
           +   flight.outbound.time
+          + '</div>'
+          + '<div class="odSeparator">→</div>'
+          + '<div class="timeAirportArrival">'
+          +   flight.outbound.arrivalTime
           + '</div>'
           + '<div class="duration">'
           +   flight.outbound.duration
           + '</div>'
           + '<br/>'
           + '<div class="flightnumber"></div>'
-          + '<div class="odSeparator">←</div>'
           + '<div class="timeAirportBlock timeAirportBlockDeparture">'
           +   flight.inbound.time
+          + '</div>'
+          + '<div class="odSeparator">→</div>'
+          + '<div class="timeAirportArrival">'
+          +   flight.inbound.arrivalTime
           + '</div>'
           + '<div class="duration">'
           +   flight.inbound.duration
