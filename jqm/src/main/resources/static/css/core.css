@@ -96,7 +96,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 @font-face {
     font-family: cool_font;
-    src: url('/fonts/american-regular-webfont.ttf');
+    src: url('../fonts/american-regular-webfont.ttf');
 }
 
 * {

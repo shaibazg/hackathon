@@ -122,6 +122,8 @@ $(document).on("click", "#romance", function() {
 			detailsControlDiv.index = 1;
 			map.controls[google.maps.ControlPosition.TOP_CENTER].push(detailsControlDiv);
 		}
+		performSearch(this.getTitle());
+		showWeather(map);
 		return false;
 	}
 
