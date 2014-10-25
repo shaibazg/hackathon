@@ -99,6 +99,7 @@ function buildPriceList(destination) {
 
     });
     //append list to ul
+    $("#flights-list").empty();
     $("#flights-list").append(li);
 
 
