@@ -102,9 +102,9 @@ $(document).on("click", "#romance", function() {
 
 	function styledCityPairContent(travelTheme, iterator) {
 		var content = '<div>' +
-			'<span style="color:#22A7F0;">' + travelTheme.cityPair.destination.address.city + ", " +
+			'<div style="color:#000; font-weight: bold;">' + travelTheme.cityPair.destination.address.city + ", " +
 			travelTheme.cityPair.destination.address.state + " (" +
-			travelTheme.cityPair.destination.code + ") </span>" +
+			travelTheme.cityPair.destination.code + ") </div>" +
 			' <span style="color:green;"><a href="#" onclick="buildPriceList(\'beach\');return false"id="lowest-fare-' + iterator  +  '">$' + travelTheme.lowestFare +
 			'</a></span>' +
 			'</div>';
