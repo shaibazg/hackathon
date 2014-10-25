@@ -70,7 +70,7 @@ function buildPriceList(destination) {
           // + '<div class="timeAirportBlock timeAirportBlockDeparture">'
           // +   '07:00'
           // + '</div>'
-          + '<div class="flightnumber">#'+flight.outbound.fltNbr+'</div>'
+          + '<div class="flightnumber">&nbsp;</div>'
           + '<div class="odSeparator">→</div>'
           + '<div class="timeAirportBlock timeAirportBlockDeparture">'
           +   flight.outbound.time

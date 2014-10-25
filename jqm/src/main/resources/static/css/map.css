@@ -130,9 +130,50 @@ line-height: 21px;
 
 .flightnumber{
   width:20px;
+  background-image: url('http://www.kayak.co.uk/res/images/air/2x/AA.png?v=6caa87ddbd05684560d95a16d6ae9ee3362ad0ce');
+  background-size: contain;
 }
 
 #sidebar-title {
-  color: #6e8999;
+  color: #4db4fa;
 font-family: 'cool_font';
+font-size: 15px;
+/*padding-left: 20px;*/
+padding-top: 10px;
+text-align: center;
+}
+
+.flights-list li {
+  padding-left: 20px;
+}
+
+.ui-panel-inner {
+  border: 0;
+  padding: 0;
+}
+
+.ui-listview>.ui-li-static.ui-last-child, .ui-listview>.ui-li-divider.ui-last-child, .ui-listview>li.ui-last-child>a.ui-btn {
+  border: 0;
+  padding: 0;
+  /*border-top: 1px solid #4db4fa;*/
+}
+
+#flights-list {
+  padding: 0 20px;
+}
+
+.ui-content .ui-listview-inset, .ui-panel-inner>.ui-listview-inset {
+  margin: 0;
+}
+
+.ui-shadow {
+  box-shadow: none;
+}
+
+.ui-listview>li {
+  border-bottom: 1px solid #4db4fa;
+}
+
+.ui-listview>li:last-child {
+  border-bottom: 0;
 }
