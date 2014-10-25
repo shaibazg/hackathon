@@ -2,7 +2,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" /> -->
+<link rel="stylesheet" href="css/jquery-mobile.css" />
 <link rel="stylesheet" href="css/core.css" />
 <link rel="stylesheet" href="css/map.css" />
 <link rel="stylesheet" href="css/aa-jquery-ui-1.8.21.css" />
@@ -67,7 +67,8 @@ $('#slides').superslides({
             showAnim: "fadeIn",
             buttonText: "",
             showOn: "both",
-            buttonImage: "http://www.aa.com/content/images/chrome/icons/aa-calendar-icon.png"
+            createButton: false
+            // buttonImage: "http://www.aa.com/content/images/chrome/icons/aa-calendar-icon.png"
         });
         setReturnOnInput();
     };
@@ -149,7 +150,7 @@ $('#slides').superslides({
         </div>
     </div>
 
-    <header data-role="header" class="options">
+    <header class="options">
 
         <div class="afcontainer1">
 
