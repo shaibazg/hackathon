@@ -169,7 +169,15 @@ $(document).on("click", "#romance", function() {
 	            	    stylers: [
 	            	              { visibility: "off" }
 	            	    ]
+	             },
+	            
+	             {
+	            	    featureType: 'administrative.locality',
+	            	    stylers: [
+	            	              { visibility: "off" }
+	            	    ]
 	             }
+	             
     	];
 
     	map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);

@@ -101,12 +101,12 @@ $(document).on("click", "#romance", function() {
 	}
 
 	function styledCityPairContent(travelTheme, iterator) {
-		var content = '<div>' +
-			'<span style="color:#22A7F0;">' + travelTheme.cityPair.destination.address.city + ", " +
+		var content = '<div onclick="buildPriceList(\'beach\');return false" class="fareTooltip">' +
+			'<span style="color:#000;">' + travelTheme.cityPair.destination.address.city + ", " +
 			travelTheme.cityPair.destination.address.state + " (" +
 			travelTheme.cityPair.destination.code + ") </span>" +
-			' <span style="color:green;"><a href="#" onclick="buildPriceList(\'beach\');return false"id="lowest-fare-' + iterator  +  '">$' + travelTheme.lowestFare +
-			'</a></span>' +
+			' <span style="color: #666; font-weight: bold; font-size: 1.1em;" id="lowest-fare-' + iterator  +  '">$' + travelTheme.lowestFare +
+			'</span></span>' +
 			'</div>';
 		return content;
 	}
@@ -169,7 +169,15 @@ $(document).on("click", "#romance", function() {
 	            	    stylers: [
 	            	              { visibility: "off" }
 	            	    ]
+	             },
+	            
+	             {
+	            	    featureType: 'administrative.locality',
+	            	    stylers: [
+	            	              { visibility: "off" }
+	            	    ]
 	             }
+	             
     	];
 
     	map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
