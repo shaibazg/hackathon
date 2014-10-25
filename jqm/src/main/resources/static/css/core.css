@@ -977,7 +977,7 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     -webkit-appearance: none;
     background-color: white;
     border: 1px solid;
-    border-color: #4db4fa;
+    border-color: #000;
     color: #4db4fa;
     display: inline-block;
     outline: 0;
