@@ -62,9 +62,9 @@ $(document).on("click", "#romance", function() {
 
     function addCity(travelTheme, type) {
 		  if (type == 'beach') {
-			  iconPath = './images/icons/map/beach_icon_s.png';
+			  iconPath = './images/icons/beach_icon_s.png';
 		  }	else {
-			  iconPath = './images/icons/map/romance_icon_s.png';
+			  iconPath = './images/icons/romance_icon_s.png';
 		  }
 		  var marker = new google.maps.Marker({
 			    position: new google.maps.LatLng(travelTheme[iterator].cityPair.destination.latitude,
