@@ -242,5 +242,5 @@ $(document).on("click", "#romance", function() {
     $(document).on("click", "#spa", function() {
     	console.log('Inside spa click....');
     	$("#flights-panel").panel("open");
-    	// return false;
+    	return false;
     });
