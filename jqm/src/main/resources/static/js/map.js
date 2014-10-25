@@ -59,13 +59,14 @@ $(document).on("click", "#romance", function() {
 			    }, i * 200);
 		  }
 	}
+
     function addCity(travelTheme, type) {
 		  if (type == 'beach') {
 			  iconPath = './images/icons/beach_icon_s.png';
 		  }	else {
 			  iconPath = './images/icons/romance_icon_s.png';
 		  }
-		  marker = new google.maps.Marker({
+		  var marker = new google.maps.Marker({
 			    position: new google.maps.LatLng(travelTheme[iterator].cityPair.destination.latitude,
 			    		travelTheme[iterator].cityPair.destination.longitude),
 			    map: map,
@@ -75,19 +76,14 @@ $(document).on("click", "#romance", function() {
 			    title: type,
 			    customInfo: travelTheme[iterator]
 			  })
-	      infoWindow = new google.maps.InfoWindow();
-	      infoWindow.setContent(styledCityPairContent(travelTheme[iterator]));
+	      var infoWindow = new google.maps.InfoWindow();
+	      infoWindow.setContent(styledCityPairContent(travelTheme[iterator], iterator));
 	      infoWindow.open(map, marker);
 
-
 		  iterator++;
-		  //google.maps.event.addListener(marker, 'mouseover', showLowestFare);
+
 		  google.maps.event.addListener(marker, 'click', markerSelected);
-	}
-
-
-	function findFlights() {
-		$("#flights-panel").panel("toggle");
+		  //google.maps.event.addListener(infoWindow, 'domready', contentLoaded);
 	}
 
 
@@ -101,16 +97,16 @@ $(document).on("click", "#romance", function() {
 
 	function contentLoaded() {
 		console.log('cityPairContent loaded and attached to dom');
-		//$(document).on('click', '#find-flights', findFlights);
+		//$(document).on('click', '#lowest-fare-' + iterator, buildPriceList("beach"));
 	}
 
-	function styledCityPairContent(travelTheme) {
-		var content = '<div id="cityPairContent">' +
+	function styledCityPairContent(travelTheme, iterator) {
+		var content = '<div>' +
 			'<span style="color:#22A7F0;">' + travelTheme.cityPair.destination.address.city + ", " +
 			travelTheme.cityPair.destination.address.state + " (" +
 			travelTheme.cityPair.destination.code + ") </span>" +
-			' <span style="color:green;">$' + travelTheme.lowestFare +
-			'</span>' +
+			' <span style="color:green;"><a href="#" onclick="buildPriceList(\'beach\');return false"id="lowest-fare-' + iterator  +  '">$' + travelTheme.lowestFare +
+			'</a></span>' +
 			'</div>';
 		return content;
 	}
