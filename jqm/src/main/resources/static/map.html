@@ -40,17 +40,18 @@ $('#slides').superslides({
         var topbarHeightWithPadding = topbarHeight + 40;
         var top = topbarHeightWithPadding;
         var overlayHeight = $("#titleOverlay").height() + overlayPad;
-        if (height && height < (topbarHeightWithPadding + overlayHeight)) {
-            top = height - overlayHeight;
-            if (top < topPad) {
-                top = topPad;
-            }
-        } else {
+        // if (height && height < (topbarHeightWithPadding + overlayHeight)) {
+        //     top = height - overlayHeight;
+        //     if (top < topPad) {
+        //         top = topPad;
+        //     }
+        //     topPad
+        // } else {
             $("#lean_overlay").css("top", topbarHeight + "px");
-        }
+        // }
         $("#overlayTrigger").leanModal({
             top: top,
-            overlay: 0.5,
+            overlay: 0,
             closeButton: "#closeTitleOverlay, #topbar"
         });
         $("#overlayTrigger").click();
@@ -257,10 +258,6 @@ $('#slides').superslides({
               </div>
             </li>
           </ul>
-          <nav class="slides-navigation">
-            <a href="#" class="next">Next</a>
-            <a href="#" class="prev">Previous</a>
-          </nav>
         </div>
     </div>
 
