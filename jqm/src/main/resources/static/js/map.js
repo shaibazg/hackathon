@@ -78,7 +78,7 @@ $(document).on("click", "#romance", function() {
 	      infoWindow = new google.maps.InfoWindow();
 	      infoWindow.setContent(styledCityPairContent(travelTheme[iterator]));
 	      infoWindow.open(map, marker);
-	      	
+
 
 		  iterator++;
 		  //google.maps.event.addListener(marker, 'mouseover', showLowestFare);
@@ -96,7 +96,7 @@ $(document).on("click", "#romance", function() {
 	      infoWindow = new google.maps.InfoWindow();
 	      infoWindow.setContent(styledCityPairContent(this.customInfo));
 	      infoWindow.open(map, this);
-	      
+
 	}
 
 
@@ -107,10 +107,10 @@ $(document).on("click", "#romance", function() {
 
 	function styledCityPairContent(travelTheme) {
 		var content = '<div>' +
-			'<span style="color:#22A7F0;">' + travelTheme.cityPair.destination.address.city + ", " + 
-			travelTheme.cityPair.destination.address.state + " (" + 
+			'<span style="color:#22A7F0;">' + travelTheme.cityPair.destination.address.city + ", " +
+			travelTheme.cityPair.destination.address.state + " (" +
 			travelTheme.cityPair.destination.code + ") </span>" +
-			' <span style="color:green;"><a href="#" id="lowest-fare">$' + travelTheme.lowestFare + 
+			' <span style="color:green;"><a href="#" id="lowest-fare">$' + travelTheme.lowestFare +
 			'</a></span>' +
 			'</div>';
 		return content;
@@ -198,7 +198,7 @@ $(document).on("click", "#romance", function() {
         */
 
         //map.setCenter(latlng);
-        
+
         /*
         var flightPlanCoordinates = [latlng, new google.maps.LatLng(42.896828,-90.037997)];
         var planeSymbol = {
@@ -237,10 +237,10 @@ $(document).on("click", "#romance", function() {
           flightPath.set('icons', icons);
       }, 50);
     }
-    
-    
+
+
     $(document).on("click", "#spa", function() {
     	console.log('Inside spa click....');
     	$("#flights-panel").panel("open");
-    	return false;
+    	// return false;
     });

@@ -78,3 +78,6 @@ ul {
 .slides-pagination a.current {
   background: #fff;
 }
+
+
+.ui-datepicker-trigger { display: none; }

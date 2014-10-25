@@ -3002,6 +3002,12 @@ html.ie8 .miles-field {
 }
 #titleOverlay .dialog-close {
     font-size: 2.4em;
+    position: absolute;
+top: 5px;
+right: 5px;
+background: #fff;
+z-index: 10;
+padding: 5px;
 }
 #legalDisclaimer {
     color: #000;
