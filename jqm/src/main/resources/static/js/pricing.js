@@ -82,7 +82,7 @@ function buildPriceList(destination) {
           +   flight.outbound.duration
           + '</div>'
           + '<br/>'
-          + '<div class="flightnumber"></div>'
+          + '<div class="flightnumber">'+flight.inbound.fltNbr+'</div>'
           + '<div class="timeAirportBlock timeAirportBlockDeparture">'
           +   flight.inbound.time
           + '</div>'
