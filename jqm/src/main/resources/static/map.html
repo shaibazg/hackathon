@@ -30,6 +30,18 @@ $('#slides').superslides({
     initOverlayModal();
     initializeDatePickers();
 
+    var panel = $('.ui-panel').height();
+
+    var offset = $('#map-canvas').offset().top;
+
+    var panelheight = panel - offset;
+
+    $('.ui-panel').css({
+        'top': offset,
+        // 'min-height': panelheight,
+        'z-index': 0
+    });
+
 });
 
     var initOverlayModal = function() {
@@ -202,15 +214,15 @@ $('#slides').superslides({
    		 <div class="drop-shadow-contents"> </div>
     </div>
 
-    <div data-role="content" id="map-canvas">
+    <div style="width: 100%; height: 100%;">
         <!-- google map loads here... -->
+        <div data-role="content" id="map-canvas"></div>
+        <div data-role="panel" id="flights-panel" data-position="right" data-display="overlay">
+             <ul data-role="listview" id="flights-list" data-divider-theme="a" data-inset="true">
+                <li data-role="list-divider" data-theme="b" role="heading">DFW-SAT 24th Oct</li>
+            </ul>
+        </div>
     </div>
-
-	<div data-role="panel" id="flights-panel" data-position="right" data-display="overlay">
-	     <ul data-role="listview" id="flights-list" data-divider-theme="a" data-inset="true">
-            <li data-role="list-divider" data-theme="b" role="heading">DFW-SAT 24th Oct</li>
-        </ul>
-	</div>
 
 </div>
 
