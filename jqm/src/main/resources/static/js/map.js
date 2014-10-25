@@ -101,12 +101,12 @@ $(document).on("click", "#romance", function() {
 	}
 
 	function styledCityPairContent(travelTheme, iterator) {
-		var content = '<div>' +
-			'<div style="color:#000; font-weight: bold;">' + travelTheme.cityPair.destination.address.city + ", " +
+		var content = '<div onclick="buildPriceList(\'beach\');return false" class="fareTooltip">' +
+			'<span style="color:#000;">' + travelTheme.cityPair.destination.address.city + ", " +
 			travelTheme.cityPair.destination.address.state + " (" +
-			travelTheme.cityPair.destination.code + ") </div>" +
-			' <span style="color:green;"><a href="#" onclick="buildPriceList(\'beach\');return false"id="lowest-fare-' + iterator  +  '">$' + travelTheme.lowestFare +
-			'</a></span>' +
+			travelTheme.cityPair.destination.code + ") </span>" +
+			' <span style="color: #666; font-weight: bold; font-size: 1.1em;" id="lowest-fare-' + iterator  +  '">$' + travelTheme.lowestFare +
+			'</span></span>' +
 			'</div>';
 		return content;
 	}

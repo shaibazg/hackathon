@@ -81,3 +81,5 @@ ul {
 
 
 .ui-datepicker-trigger { display: none; }
+
+.fareTooltip:hover {cursor: pointer;}
